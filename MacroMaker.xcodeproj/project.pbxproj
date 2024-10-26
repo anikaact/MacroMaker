@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		00B91FDF2CCD90F80031C1CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00B91FC12CCD90F60031C1CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00B91FC82CCD90F60031C1CD;
+			remoteInfo = MacroMaker;
+		};
+		00B91FE92CCD90F80031C1CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00B91FC12CCD90F60031C1CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00B91FC82CCD90F60031C1CD;
+			remoteInfo = MacroMaker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B91FC92CCD90F60031C1CD /* MacroMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B91FDE2CCD90F80031C1CD /* MacroMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacroMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B91FE82CCD90F80031C1CD /* MacroMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacroMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		00B91FCB2CCD90F60031C1CD /* MacroMaker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MacroMaker;
+			sourceTree = "<group>";
+		};
+		00B91FE12CCD90F80031C1CD /* MacroMakerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MacroMakerTests;
+			sourceTree = "<group>";
+		};
+		00B91FEB2CCD90F80031C1CD /* MacroMakerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MacroMakerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00B91FC62CCD90F60031C1CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B91FDB2CCD90F80031C1CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B91FE52CCD90F80031C1CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00B91FC02CCD90F60031C1CD = {
+			isa = PBXGroup;
+			children = (
+				00B91FCB2CCD90F60031C1CD /* MacroMaker */,
+				00B91FE12CCD90F80031C1CD /* MacroMakerTests */,
+				00B91FEB2CCD90F80031C1CD /* MacroMakerUITests */,
+				00B91FCA2CCD90F60031C1CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00B91FCA2CCD90F60031C1CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00B91FC92CCD90F60031C1CD /* MacroMaker.app */,
+				00B91FDE2CCD90F80031C1CD /* MacroMakerTests.xctest */,
+				00B91FE82CCD90F80031C1CD /* MacroMakerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00B91FC82CCD90F60031C1CD /* MacroMaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B91FF22CCD90F80031C1CD /* Build configuration list for PBXNativeTarget "MacroMaker" */;
+			buildPhases = (
+				00B91FC52CCD90F60031C1CD /* Sources */,
+				00B91FC62CCD90F60031C1CD /* Frameworks */,
+				00B91FC72CCD90F60031C1CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				00B91FCB2CCD90F60031C1CD /* MacroMaker */,
+			);
+			name = MacroMaker;
+			packageProductDependencies = (
+			);
+			productName = MacroMaker;
+			productReference = 00B91FC92CCD90F60031C1CD /* MacroMaker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00B91FDD2CCD90F80031C1CD /* MacroMakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B91FF52CCD90F80031C1CD /* Build configuration list for PBXNativeTarget "MacroMakerTests" */;
+			buildPhases = (
+				00B91FDA2CCD90F80031C1CD /* Sources */,
+				00B91FDB2CCD90F80031C1CD /* Frameworks */,
+				00B91FDC2CCD90F80031C1CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00B91FE02CCD90F80031C1CD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				00B91FE12CCD90F80031C1CD /* MacroMakerTests */,
+			);
+			name = MacroMakerTests;
+			packageProductDependencies = (
+			);
+			productName = MacroMakerTests;
+			productReference = 00B91FDE2CCD90F80031C1CD /* MacroMakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		00B91FE72CCD90F80031C1CD /* MacroMakerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B91FF82CCD90F80031C1CD /* Build configuration list for PBXNativeTarget "MacroMakerUITests" */;
+			buildPhases = (
+				00B91FE42CCD90F80031C1CD /* Sources */,
+				00B91FE52CCD90F80031C1CD /* Frameworks */,
+				00B91FE62CCD90F80031C1CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00B91FEA2CCD90F80031C1CD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				00B91FEB2CCD90F80031C1CD /* MacroMakerUITests */,
+			);
+			name = MacroMakerUITests;
+			packageProductDependencies = (
+			);
+			productName = MacroMakerUITests;
+			productReference = 00B91FE82CCD90F80031C1CD /* MacroMakerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00B91FC12CCD90F60031C1CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					00B91FC82CCD90F60031C1CD = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					00B91FDD2CCD90F80031C1CD = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 00B91FC82CCD90F60031C1CD;
+					};
+					00B91FE72CCD90F80031C1CD = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 00B91FC82CCD90F60031C1CD;
+					};
+				};
+			};
+			buildConfigurationList = 00B91FC42CCD90F60031C1CD /* Build configuration list for PBXProject "MacroMaker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00B91FC02CCD90F60031C1CD;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 00B91FCA2CCD90F60031C1CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00B91FC82CCD90F60031C1CD /* MacroMaker */,
+				00B91FDD2CCD90F80031C1CD /* MacroMakerTests */,
+				00B91FE72CCD90F80031C1CD /* MacroMakerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00B91FC72CCD90F60031C1CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B91FDC2CCD90F80031C1CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B91FE62CCD90F80031C1CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00B91FC52CCD90F60031C1CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B91FDA2CCD90F80031C1CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B91FE42CCD90F80031C1CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00B91FE02CCD90F80031C1CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00B91FC82CCD90F60031C1CD /* MacroMaker */;
+			targetProxy = 00B91FDF2CCD90F80031C1CD /* PBXContainerItemProxy */;
+		};
+		00B91FEA2CCD90F80031C1CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00B91FC82CCD90F60031C1CD /* MacroMaker */;
+			targetProxy = 00B91FE92CCD90F80031C1CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00B91FF02CCD90F80031C1CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00B91FF12CCD90F80031C1CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00B91FF32CCD90F80031C1CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacroMaker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MacroMaker.MacroMaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00B91FF42CCD90F80031C1CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MacroMaker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MacroMaker.MacroMaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		00B91FF62CCD90F80031C1CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MacroMaker.MacroMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacroMaker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacroMaker";
+			};
+			name = Debug;
+		};
+		00B91FF72CCD90F80031C1CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MacroMaker.MacroMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacroMaker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacroMaker";
+			};
+			name = Release;
+		};
+		00B91FF92CCD90F80031C1CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MacroMaker.MacroMakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MacroMaker;
+			};
+			name = Debug;
+		};
+		00B91FFA2CCD90F80031C1CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MacroMaker.MacroMakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MacroMaker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00B91FC42CCD90F60031C1CD /* Build configuration list for PBXProject "MacroMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B91FF02CCD90F80031C1CD /* Debug */,
+				00B91FF12CCD90F80031C1CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00B91FF22CCD90F80031C1CD /* Build configuration list for PBXNativeTarget "MacroMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B91FF32CCD90F80031C1CD /* Debug */,
+				00B91FF42CCD90F80031C1CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00B91FF52CCD90F80031C1CD /* Build configuration list for PBXNativeTarget "MacroMakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B91FF62CCD90F80031C1CD /* Debug */,
+				00B91FF72CCD90F80031C1CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00B91FF82CCD90F80031C1CD /* Build configuration list for PBXNativeTarget "MacroMakerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B91FF92CCD90F80031C1CD /* Debug */,
+				00B91FFA2CCD90F80031C1CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00B91FC12CCD90F60031C1CD /* Project object */;
+}
