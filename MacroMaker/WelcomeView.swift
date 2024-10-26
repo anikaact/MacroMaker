@@ -12,20 +12,21 @@ struct WelcomeView: View {
     
     @Binding var isFirstTimeOpening: Bool
     
-    /* Whenever these vars are changed, the updated value can be accessed everywhere, regardless of set values in those files */
-    
-    @AppStorage("height") private var height: Double = 170 // in cm
-    @AppStorage("weight") private var weight: Double = 70 // in kg
-    @AppStorage("age") private var age: Int = 25
-    @AppStorage("gender") private var gender: String = "Male"
-    @AppStorage("activityLevel") private var activityLevel: String = "Sedentary"
-    @AppStorage("recommendedCalories") private var recommendedCalories: Double = 0
-    @AppStorage("recommendedProtein") private var recommendedProtein: Double = 0
-    @AppStorage("recommendedCarbs") private var recommendedCarbs: Double = 0
-    @AppStorage("recommendedFats") private var recommendedFats: Double = 0
+    @State private var height: Double = 170 // in cm
+    @State private var weight: Double = 70 // in kg
+    @State private var age: Int = 25
+    @State private var gender: String = "Male"
+    @State private var weightGoal: String = "Maintain"
+    @State private var activityLevel: String = "Sedentary"
+    @State private var recommendedCalories: Double = 0
+    @State private var recommendedProtein: Double = 0
+    @State private var recommendedCarbs: Double = 0
+    @State private var recommendedFats: Double = 0
     
     let genders = ["Male", "Female"]
     let activityLevels = ["Sedentary", "Lightly Active", "Moderately Active", "Very Active", "Super Active"]
+    let weightGoals = ["Loss", "Maintain", "Gain"]
+    
     var body: some View {
         VStack(spacing: 20) {
             Text("Macro Calculator")
@@ -60,6 +61,12 @@ struct WelcomeView: View {
                     }
                 }
                 
+                Section(header: Text("Weight Goal: ")) {
+                    Picker("Weight Goal", selection: $weightGoal) {
+                        ForEach(activityLevels, id: \.self) { Text($0) }
+                    }
+                }
+                
                 Section(header: Text("Activity Level")) {
                     Picker("Activity Level", selection: $activityLevel) {
                         ForEach(activityLevels, id: \.self) { Text($0) }
@@ -82,17 +89,6 @@ struct WelcomeView: View {
                         Text("Protein: \(Int(recommendedProtein)) g")
                         Text("Carbs: \(Int(recommendedCarbs)) g")
                         Text("Fats: \(Int(recommendedFats)) g")
-                        Button(action: {
-                            isFirstTimeOpening = false
-                        }) {
-                            Text("Continue!")
-                                .bold()
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
                     }
                 }
             }
@@ -120,6 +116,7 @@ struct WelcomeView: View {
         case "Super Active": multiplier = 1.9
         default: multiplier = 1.2
         }
+        
         
         let tdee = bmr * multiplier
         recommendedCalories = tdee
