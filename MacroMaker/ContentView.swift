@@ -23,13 +23,9 @@ struct ContentView: View {
                         .tabItem {
                             Label("", systemImage: "gearshape")
                         }
-                    DailyMacrosView()
+                    AddMealView()
                         .tabItem {
-                            Label("", systemImage: "hexagon")
-                        }
-                    CalendarView()
-                        .tabItem {
-                            Label("", systemImage: "calendar")
+                            Label("", systemImage: "plus")
                         }
                 }
             }
