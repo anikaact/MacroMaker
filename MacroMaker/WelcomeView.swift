@@ -89,15 +89,6 @@ struct WelcomeView: View {
                         Text("Protein: \(Int(recommendedProtein)) g")
                         Text("Carbs: \(Int(recommendedCarbs)) g")
                         Text("Fats: \(Int(recommendedFats)) g")
-                        Button(action: { isFirstTimeOpening = false }) {
-                            Text("Continue!")
-                                .bold()
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
                     }
                 }
             }
@@ -126,16 +117,30 @@ struct WelcomeView: View {
         default: multiplier = 1.2
         }
         
-        
         let tdee = bmr * multiplier
         recommendedCalories = tdee
         
         // Calculate macros based on TDEE
-        recommendedProtein = weight * 1.8
-        recommendedFats = weight * 0.8
-        let proteinCalories = recommendedProtein * 4
-        let fatCalories = recommendedFats * 9
-        let carbCalories = tdee - proteinCalories - fatCalories
-        recommendedCarbs = carbCalories / 4
+        let proteinCalories: Double
+        let fatCalories: Double
+        let carbCalories: Double
+        switch weightGoal {
+        case "Loss":
+            recommendedCalories = recommendedCalories * 0.85
+            recommendedCarbs = recommendedCalories * 0.4
+            recommendedProtein = recommendedCalories * 0.4
+            recommendedFats = recommendedCalories * 0.2
+        case "Maintain":
+            recommendedCarbs = recommendedCalories * 0.4
+            recommendedProtein = recommendedCalories * 0.3
+            recommendedFats = recommendedCalories * 0.3
+        case "Gain":
+            recommendedCalories = recommendedCalories + 500
+            recommendedCarbs = recommendedCalories * 0.4
+            recommendedProtein = recommendedCalories * 0.3
+            recommendedFats = recommendedCalories * 0.3
+        default:
+            recommendedCalories = recommendedCalories
+        }
     }
 }
