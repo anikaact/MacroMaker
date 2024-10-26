@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var weight: Double = 70 // in kg
     @State private var age: Int = 25
     @State private var gender: String = "Male"
+    @State private var weightGoal: String = "Maintain"
     @State private var activityLevel: String = "Sedentary"
     @State private var recommendedCalories: Double = 0
     @State private var recommendedProtein: Double = 0
@@ -21,6 +22,7 @@ struct ContentView: View {
     
     let genders = ["Male", "Female"]
     let activityLevels = ["Sedentary", "Lightly Active", "Moderately Active", "Very Active", "Super Active"]
+    let weightGoals = ["Loss", "Maintain", "Gain"]
     
     var body: some View {
         VStack(spacing: 20) {
@@ -53,6 +55,12 @@ struct ContentView: View {
                         Spacer()
                         TextField("Age", value: $age, formatter: NumberFormatter())
                             .keyboardType(.numberPad)
+                    }
+                }
+                
+                Section(header: Text("Weight Goal: ")) {
+                    Picker("Weight Goal", selection: $weightGoal) {
+                        ForEach(activityLevels, id: \.self) { Text($0) }
                     }
                 }
                 
@@ -105,6 +113,7 @@ struct ContentView: View {
         case "Super Active": multiplier = 1.9
         default: multiplier = 1.2
         }
+        
         
         let tdee = bmr * multiplier
         recommendedCalories = tdee
