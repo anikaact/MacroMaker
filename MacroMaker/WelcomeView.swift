@@ -89,6 +89,15 @@ struct WelcomeView: View {
                         Text("Protein: \(Int(recommendedProtein)) g")
                         Text("Carbs: \(Int(recommendedCarbs)) g")
                         Text("Fats: \(Int(recommendedFats)) g")
+                        Button(action: { isFirstTimeOpening = false }) {
+                            Text("Continue!")
+                                .bold()
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
                     }
                 }
             }
