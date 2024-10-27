@@ -12,10 +12,22 @@ struct SettingsView: View {
     @Binding var isFirstTimeOpening: Bool
     
     var body: some View {
-        Button(action: {
-            isFirstTimeOpening = true
-        }) {
-            Text("Go back to setup")
+        NavigationView {
+            Button(action: {
+                isFirstTimeOpening = true
+            }) {
+                Text("Go back to setup")
+            }
         }
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button(action: {
+                    UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+                }) {
+                    Text("Back")
+                }
+            }
+        }
+        
     }
 }
