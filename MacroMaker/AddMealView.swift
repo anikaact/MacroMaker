@@ -1,28 +1,21 @@
 import SwiftUI
 
 struct AddMealView: View {
-    @State private var selectedMealType: MealType = .breakfast
+    @State private var selectedMealType: String = "Breakfast"
     @State private var mealTitle: String = ""
     @State private var fat: String = ""
     @State private var carbs: String = ""
     @State private var protein: String = ""
 
-    enum MealType: String, CaseIterable, Identifiable {
-        case breakfast = "Breakfast"
-        case lunch = "Lunch"
-        case dinner = "Dinner"
-        case snack = "Snack"
-        
-        var id: String { self.rawValue }
-    }
+    let mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack"]
 
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Meal Details")) {
                     Picker("Meal Type", selection: $selectedMealType) {
-                        ForEach(MealType.allCases) { mealType in
-                            Text(mealType.rawValue).tag(mealType)
+                        ForEach(mealTypes, id: \.self) { mealType in
+                            Text(mealType).tag(mealType)
                         }
                     }
                     .pickerStyle(MenuPickerStyle())
@@ -58,10 +51,9 @@ struct AddMealView: View {
     
     private func addMeal() {
         print("Meal Added:")
-        print("Type: \(selectedMealType.rawValue), Title: \(mealTitle), Fat: \(fat), Carbs: \(carbs), Protein: \(protein)")
+        print("Type: \(selectedMealType), Title: \(mealTitle), Fat: \(fat), Carbs: \(carbs), Protein: \(protein)")
         
-
-        selectedMealType = .breakfast
+        selectedMealType = "Breakfast"
         mealTitle = ""
         fat = ""
         carbs = ""
