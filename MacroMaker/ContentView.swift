@@ -12,6 +12,9 @@ import CoreData
 
 struct ContentView: View {
     @AppStorage("isFirstTimeOpening") var isFirstTimeOpening: Bool = true
+    @AppStorage("mealDataString") var mealDataString: String = ""
+    
+    @State private var mealDataStrings: [String] = []
     
     @State private var showDatePicker = false
     
@@ -20,19 +23,24 @@ struct ContentView: View {
     
     @State private var selectedDate: Date = Date()
     
+    @AppStorage("recommendedCalories") var recommendedCalories: Double = 0.0
+    @AppStorage("recommendedProtien") var recommendedProtein: Double = 0.0
+    @AppStorage("recommendedCarbs") var recommendedCarbs: Double = 0.0
+    @AppStorage("recommendedFats") var recommendedFats: Double = 0.0
+    
     var body: some View {
         VStack(spacing: 20) {
             if isFirstTimeOpening {
-                WelcomeView(isFirstTimeOpening: $isFirstTimeOpening)
+                WelcomeView(isFirstTimeOpening: $isFirstTimeOpening, recommendedCalories: $recommendedCalories, recommendedProtein: $recommendedProtein, recommendedCarbs: $recommendedCarbs, recommendedFats: $recommendedFats)
             } else {
                 if openSettings {
-                    SettingsView(openSettings: $openSettings, isFirstTimeOpening: $isFirstTimeOpening)
+                    SettingsView(openSettings: $openSettings, isFirstTimeOpening: $isFirstTimeOpening, mealDataString: $mealDataString)
                 } else if openAddMeal {
-                    AddMealView(openAddMeal: $openAddMeal)
+                    AddMealView(openAddMeal: $openAddMeal, mealDataString: $mealDataString)
                 } else {
                     NavigationView {
                         VStack {
-                            Text("Hello, World!")
+                            Text(mealDataString)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                         }
                         .navigationTitle(formatDate(selectedDate)) // Center title with today's date
@@ -86,6 +94,9 @@ struct ContentView: View {
                     }
                 }
             }
+        }
+        .onAppear {
+            mealDataStrings = mealDataString.split(separator: "\n") as? [String] ?? [""]
         }
     }
     

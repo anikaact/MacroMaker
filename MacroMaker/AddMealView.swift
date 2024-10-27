@@ -3,6 +3,7 @@ import SwiftUI
 struct AddMealView: View {
     
     @Binding var openAddMeal: Bool
+    @Binding var mealDataString: String
     
     @State private var selectedMealType: String = "Breakfast"
     @State private var mealTitle: String = ""
@@ -37,10 +38,10 @@ struct AddMealView: View {
                 }
                 
                 Section {
+                    // confirm meal
                     Button(action: {
                         
-                        print("Meal Added:")
-                        print("Type: \(selectedMealType), Title: \(mealTitle), Fat: \(fat), Carbs: \(carbs), Protein: \(protein)")
+                        mealDataString = mealDataString + "\n" + selectedMealType + "," + mealTitle + "," + fat + "," + carbs + "," + protein
                         
                         selectedMealType = "Breakfast"
                         mealTitle = ""
