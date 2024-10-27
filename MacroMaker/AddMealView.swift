@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct AddMealView: View {
+    
+    @Binding var openAddMeal: Bool
+    
     @State private var selectedMealType: String = "Breakfast"
     @State private var mealTitle: String = ""
     @State private var fat: String = ""
@@ -34,7 +37,20 @@ struct AddMealView: View {
                 }
                 
                 Section {
-                    Button(action: addMeal) {
+                    Button(action: {
+                        
+                        print("Meal Added:")
+                        print("Type: \(selectedMealType), Title: \(mealTitle), Fat: \(fat), Carbs: \(carbs), Protein: \(protein)")
+                        
+                        selectedMealType = "Breakfast"
+                        mealTitle = ""
+                        fat = ""
+                        carbs = ""
+                        protein = ""
+                        
+                        openAddMeal = false
+                        
+                    }) {
                         Text("Add Meal")
                             .frame(maxWidth: .infinity)
                             .padding()
@@ -46,23 +62,21 @@ struct AddMealView: View {
             }
             .navigationTitle("Add Meal")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(action: {
+                        selectedMealType = "Breakfast"
+                        mealTitle = ""
+                        fat = ""
+                        carbs = ""
+                        protein = ""
+                        
+                        openAddMeal = false
+                    }) {
+                        Text("Cancel")
+                    }
+                }
+            }
         }
-    }
-    
-    private func addMeal() {
-        print("Meal Added:")
-        print("Type: \(selectedMealType), Title: \(mealTitle), Fat: \(fat), Carbs: \(carbs), Protein: \(protein)")
-        
-        selectedMealType = "Breakfast"
-        mealTitle = ""
-        fat = ""
-        carbs = ""
-        protein = ""
-    }
-}
-
-struct AddMealView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddMealView()
     }
 }

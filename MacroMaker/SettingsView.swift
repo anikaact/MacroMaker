@@ -9,22 +9,25 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @Binding var openSettings: Bool
     @Binding var isFirstTimeOpening: Bool
     
     var body: some View {
         NavigationView {
-            Button(action: {
-                isFirstTimeOpening = true
-            }) {
-                Text("Go back to setup")
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
+            VStack {
                 Button(action: {
-                    UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+                    isFirstTimeOpening = true
                 }) {
-                    Text("Back")
+                    Text("Go back to setup")
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(action: {
+                        openSettings = false
+                    }) {
+                        Text("Back")
+                    }
                 }
             }
         }
