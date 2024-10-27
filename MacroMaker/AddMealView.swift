@@ -26,11 +26,11 @@ struct AddMealView: View {
                 
                 Section(header: Text("Nutritional Information")) {
                     TextField("Fat (g)", text: $fat)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                     TextField("Carbs (g)", text: $carbs)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                     TextField("Protein (g)", text: $protein)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                 }
                 
                 Section {

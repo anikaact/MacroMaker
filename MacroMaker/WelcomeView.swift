@@ -12,8 +12,8 @@ struct WelcomeView: View {
     
     @Binding var isFirstTimeOpening: Bool
     
-    @State private var height: Double = 170 // in cm
-    @State private var weight: Double = 70 // in kg
+    @State private var height: Double = 65 // in cm
+    @State private var weight: Double = 130 // in kg
     @State private var age: Int = 25
     @State private var gender: String = "Male"
     @State private var weightGoal: String = "Maintain"
@@ -40,14 +40,14 @@ struct WelcomeView: View {
                     }.pickerStyle(SegmentedPickerStyle())
                     
                     HStack {
-                        Text("Height (cm):")
+                        Text("Height (in):")
                         Spacer()
                         TextField("Height", value: $height, formatter: NumberFormatter())
                             .keyboardType(.decimalPad)
                     }
                     
                     HStack {
-                        Text("Weight (kg):")
+                        Text("Weight (lbs):")
                         Spacer()
                         TextField("Weight", value: $weight, formatter: NumberFormatter())
                             .keyboardType(.decimalPad)
