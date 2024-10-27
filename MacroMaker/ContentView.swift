@@ -26,9 +26,9 @@ struct ContentView: View {
                 WelcomeView(isFirstTimeOpening: $isFirstTimeOpening)
             } else {
                 if openSettings {
-                    SettingsView(isFirstTimeOpening: $isFirstTimeOpening)
+                    SettingsView(openSettings: $openSettings, isFirstTimeOpening: $isFirstTimeOpening)
                 } else if openAddMeal {
-                    AddMealView()
+                    AddMealView(openAddMeal: $openAddMeal)
                 } else {
                     NavigationView {
                         VStack {
