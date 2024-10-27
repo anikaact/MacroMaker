@@ -7,6 +7,8 @@ struct AddMealView: View {
     
     @State private var selectedMealType: String = "Breakfast"
     @State private var mealTitle: String = ""
+    @State private var date: String = ""
+    @State private var calories: String = ""
     @State private var fat: String = ""
     @State private var carbs: String = ""
     @State private var protein: String = ""
@@ -29,6 +31,8 @@ struct AddMealView: View {
                 }
                 
                 Section(header: Text("Nutritional Information")) {
+                    TextField("Calories", text: $calories)
+                        .keyboardType(.numberPad)
                     TextField("Fat (g)", text: $fat)
                         .keyboardType(.numberPad)
                     TextField("Carbs (g)", text: $carbs)
@@ -41,10 +45,14 @@ struct AddMealView: View {
                     // confirm meal
                     Button(action: {
                         
-                        mealDataString = mealDataString + "\n" + selectedMealType + "," + mealTitle + "," + fat + "," + carbs + "," + protein
+                        date = formatDate(Date())
+                        
+                        mealDataString = mealDataString + "\n" + selectedMealType + "," + mealTitle + "," + date + "," + calories + "," + fat + "," + carbs + "," + protein
                         
                         selectedMealType = "Breakfast"
                         mealTitle = ""
+                        date = ""
+                        calories = ""
                         fat = ""
                         carbs = ""
                         protein = ""

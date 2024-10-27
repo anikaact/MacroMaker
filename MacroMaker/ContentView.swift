@@ -1,20 +1,11 @@
-//
-//  ContentView.swift
-//  MacroMaker
-//
-//  Created by a on 10/26/24.
-//
-
 import SwiftUI
 import CoreData
-
-
 
 struct ContentView: View {
     @AppStorage("isFirstTimeOpening") var isFirstTimeOpening: Bool = true
     @AppStorage("mealDataString") var mealDataString: String = ""
     
-    @State private var mealDataStrings: [String] = []
+    @State private var mealData: [String] = []
     
     @State private var showDatePicker = false
     
@@ -24,9 +15,14 @@ struct ContentView: View {
     @State private var selectedDate: Date = Date()
     
     @AppStorage("recommendedCalories") var recommendedCalories: Double = 0.0
-    @AppStorage("recommendedProtien") var recommendedProtein: Double = 0.0
+    @AppStorage("recommendedProtein") var recommendedProtein: Double = 0.0
     @AppStorage("recommendedCarbs") var recommendedCarbs: Double = 0.0
     @AppStorage("recommendedFats") var recommendedFats: Double = 0.0
+    
+    @State public static var consumedCalories: Double = 0.0
+    @State public static var consumedProtein: Double = 0.0
+    @State public static var consumedCarbs: Double = 0.0
+    @State public static var consumedFats: Double = 0.0
     
     var body: some View {
         VStack(spacing: 20) {
@@ -40,8 +36,21 @@ struct ContentView: View {
                 } else {
                     NavigationView {
                         VStack {
-                            Text(mealDataString)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            // Displaying recommended values as bars
+                            VStack(spacing: 10) {
+                                BarGraph(value: ContentView.consumedCalories, total: recommendedCalories, label: "Calories")
+                                BarGraph(value: ContentView.consumedProtein, total: recommendedProtein, label: "Protein")
+                                BarGraph(value: ContentView.consumedCarbs, total: recommendedCarbs, label: "Carbs")
+                                BarGraph(value: ContentView.consumedFats, total: recommendedFats, label: "Fats")
+                            }
+                            .padding()
+
+                            // Displaying meal data
+                            VStack(spacing: 10) {
+                                ForEach(parseMealDataString(mealDataString: mealDataString)!, id: \.title) { mealCard in
+                                    mealCard
+                                }
+                            }
                         }
                         .navigationTitle(formatDate(selectedDate)) // Center title with today's date
                         .navigationBarTitleDisplayMode(.inline)
@@ -49,7 +58,7 @@ struct ContentView: View {
                             // Top Navigation Bar Items
                             ToolbarItem(placement: .navigationBarLeading) {
                                 Button(action: {
-                                    selectedDate = Calendar.current.date(byAdding: .day, value: -1, to:  selectedDate) ?? selectedDate
+                                    selectedDate = Calendar.current.date(byAdding: .day, value: -1, to: selectedDate) ?? selectedDate
                                 }) {
                                     Image(systemName: "arrow.backward")
                                 }
@@ -95,13 +104,8 @@ struct ContentView: View {
                 }
             }
         }
-        .onAppear {
-            mealDataStrings = mealDataString.split(separator: "\n") as? [String] ?? [""]
-        }
     }
-    
 }
-
 
 // Separate view for the DatePicker
 struct DatePickerView: View {
@@ -137,10 +141,123 @@ func formatDate(_ date: Date) -> String {
     return formatter.string(from: date)
 }
 
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
 
+struct BarGraph: View {
+    var value: Double
+    var total: Double
+    var label: String
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(label)
+                .font(.headline)
+            
+            ZStack(alignment: .leading) {
+                // Background bar with 100% width
+                Rectangle()
+                    .fill(Color.gray.opacity(0.3)) // Light gray background color
+                    .frame(height: 20)
+                    .cornerRadius(5)
+
+                // Foreground bar that scales with value
+                Rectangle()
+                    .fill(Color.blue) // Progress bar color
+                    .frame(width: CGFloat(value / total) * UIScreen.main.bounds.width * 0.75, height: 20) // Width based on value and 75% of screen width
+                    .cornerRadius(5)
+                    .animation(.easeInOut) // Smooth animation for bar update
+            }
+            .frame(width: UIScreen.main.bounds.width * 0.75) // Restrict the bar width to 75% of screen width
+            
+            HStack {
+                Text("0") // Left value
+                    .font(.subheadline)
+                Spacer()
+                Text("\(Int(total))") // Right value
+                    .font(.subheadline)
+            }
+            .frame(width: UIScreen.main.bounds.width * 0.75) // Match width to the bar
+        }
+        .padding(.vertical, 5) // Vertical padding between bars
+    }
+}
+
+struct MealDataCard: View {
+    var mealType: String
+    var title: String
+    var date: String
+    var calories: String
+    var fat: String
+    var carbs: String
+    var protein: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text(mealType)
+                    .font(.headline)
+                    .foregroundColor(.primary)
+                Spacer()
+                Text(date)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+            
+            Text(title)
+                .font(.title2)
+                .foregroundColor(.primary)
+
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Calories: \(calories)")
+                    Text("Fat: \(fat) g")
+                }
+                
+                Spacer()
+                
+                VStack(alignment: .leading) {
+                    Text("Carbs: \(carbs) g")
+                    Text("Protein: \(protein) g")
+                }
+            }
+            .font(.body)
+            .foregroundColor(.primary)
+            
+            Divider()
+        }
+        .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(10)
+        .shadow(radius: 2)
+        .padding(.horizontal)
+    }
+}
+
+func parseMealDataString(mealDataString: String) -> [MealDataCard]? {
+    let meals = mealDataString.split(separator: "\n")
+    
+    return meals.enumerated().compactMap { index, meal in
+        let components = meal.split(separator: ",").map { String($0) }
+        
+        guard components.count == 7 else { return nil}
+        
+        ContentView.consumedCalories += Double(components[3]) ?? 0.0
+        ContentView.consumedProtein += Double(components[6]) ?? 0.0
+        ContentView.consumedCarbs += Double(components[5]) ?? 0.0
+        ContentView.consumedFats += Double(components[4]) ?? 0.0
+        
+        return MealDataCard(
+            mealType: components[0],
+            title: components[1],
+            date: components[2],
+            calories: components[3],
+            fat: components[4],
+            carbs: components[5],
+            protein: components[6]
+        )
+    }
 }
