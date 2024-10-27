@@ -18,10 +18,11 @@ struct WelcomeView: View {
     @State private var gender: String = "Male"
     @State private var weightGoal: String = "Maintain"
     @State private var activityLevel: String = "Sedentary"
-    @State private var recommendedCalories: Double = 0
-    @State private var recommendedProtein: Double = 0
-    @State private var recommendedCarbs: Double = 0
-    @State private var recommendedFats: Double = 0
+    
+    @Binding var recommendedCalories: Double
+    @Binding var recommendedProtein: Double
+    @Binding var recommendedCarbs: Double
+    @Binding var recommendedFats: Double
     
     let genders = ["Male", "Female"]
     let activityLevels = ["Sedentary", "Lightly Active", "Moderately Active", "Very Active", "Super Active"]
@@ -132,9 +133,6 @@ struct WelcomeView: View {
         recommendedCalories = tdee
         
         // Calculate macros based on TDEE
-        let proteinCalories: Double
-        let fatCalories: Double
-        let carbCalories: Double
         switch weightGoal {
         case "Loss":
             recommendedCalories = recommendedCalories * 0.85

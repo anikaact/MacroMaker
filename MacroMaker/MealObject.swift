@@ -6,18 +6,28 @@
 //
 
 import Foundation
+import SwiftUI
 
-class MealObject {
+class MealObject: Codable {
     var type: String
     var title: String
-    var date: Date
+    var date: String
     var fat: String
     var carbs: String
     var protein: String
     
-    init(Type: String, Title: String, date: Date, fat: String, carbs: String, protein: String) {
-        self.type = Type
-        self.title = Title
+    init() {
+        self.type = ""
+        self.title = ""
+        self.date = ""
+        self.fat = ""
+        self.carbs = ""
+        self.protein = ""
+    }
+    
+    init(type: String, title: String, date: String, fat: String, carbs: String, protein: String) {
+        self.type = type
+        self.title = title
         self.date = date
         self.fat = fat
         self.carbs = carbs
